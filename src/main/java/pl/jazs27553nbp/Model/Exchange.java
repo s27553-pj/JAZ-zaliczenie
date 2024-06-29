@@ -1,13 +1,11 @@
 package pl.jazs27553nbp.Model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.springframework.web.service.annotation.GetExchange;
 
 @Entity
+@Table(name="nbp")
 public class Exchange {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +30,7 @@ public class Exchange {
     public Exchange() {
     }
 
-    public Exchange(Long id, String name, String startDate, String endDate, double average, String query) {
-        this.id = id;
+    public Exchange(String name, String startDate, String endDate, double average, String query) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
