@@ -1,5 +1,6 @@
 package pl.jazs27553nbp.Model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,11 +11,22 @@ import org.springframework.web.service.annotation.GetExchange;
 public class Exchange {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "Unique identifier", example="1")
     private Long id;
+    @Schema(description = "value name", example="eur")
+
     private String name;
+    @Schema(description = "start date", example="16.04.2024")
+
     private String startDate;
+    @Schema(description = "end date", example="26.04.2024")
+
     private String endDate;
+    @Schema(description = "average", example="4.5")
+
     private double average;
+    @Schema(description = "query date", example="")
+
     private String query;
 
     public Exchange() {
